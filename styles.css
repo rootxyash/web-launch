@@ -9,7 +9,7 @@ body, html {
 /* Style the rocket container */
 .rocket-container {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -23,10 +23,11 @@ body, html {
     background-color: #f00;
     border-radius: 50%;
     animation: launch 2s ease-in-out;
+    opacity: 0; /* Initially hide the rocket */
 }
 
-/* Style the logo and text container */
-.logo-container {
+/* Style the content container */
+.content {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -47,4 +48,16 @@ body, html {
 /* Style the launch text */
 .launch-text {
     font-size: 24px;
+}
+
+/* Animation for rocket launch */
+@keyframes launch {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
 }
