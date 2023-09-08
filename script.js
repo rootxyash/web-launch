@@ -1,6 +1,15 @@
-// JavaScript to trigger the rocket launch animation on page load
-window.addEventListener("load", function () {
-    const rocket = document.querySelector(".rocket");
-    rocket.classList.add("launch");
+var launch = document.getElementsByClassName("launch"),
+    rocket = document.getElementsByClassName("rocket"),
+    footer = document.getElementsByTagName("footer");
+
+launch[0].addEventListener("click", function () {
+  launch[0].style.display = "none";
+  rocket[0].style.animation = "fire 5s";
+  footer[0].style.opacity = 1;
+  setTimeout(function () {
+    rocket[0].style.animation = "";
+    launch[0].style.display = "block";
+    footer[0].style.opacity = 0;
+  }, 20000)
 });
 
